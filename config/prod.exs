@@ -11,6 +11,7 @@ use Mix.Config
 # before starting your production server.
 config :chat, ChatWeb.Endpoint,
   load_from_system_env: true,
+  http: [port: {:system, "PORT"}],
   url: [scheme: "https", host: "phxchat-charlie-test.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/cache_manifest.json",
